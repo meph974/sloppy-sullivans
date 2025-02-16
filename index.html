@@ -6,6 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+
+    @keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Container for all cryptic ads */
+.ads {
+  display: flex;
+  flex-wrap: wrap;        /* Allows multiple ads side by side if screen is wide enough */
+  justify-content: center; 
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Each individual ad box */
+.cryptic-ad {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-color: #ff00ff;
+  border: 5px dotted #ffff00; 
+  color: #000;
+  font-size: 16px;
+  padding: 10px;
+  animation: spin 5s linear infinite; /* Spin each box continuously */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+}
     /* Keyframes for flashing text */
     @keyframes flash {
       0%   { color: #ff0000; }
@@ -194,6 +227,21 @@
          onmouseenter="playScream()"
          style="width: 600px; max-width: 100%; border: 5px double #8a2be2;">
   </div>
+
+  <div class="ads">
+  <div class="cryptic-ad">
+    <p>THE SAUCE HUNGERS FOR FLESH!</p>
+    <p>ሶስ ብራኺ ስጋን ይጠልፋ!</p>
+  </div>
+  <div class="cryptic-ad">
+    <p>ABANDON HOPE, ALL YE WHO ENTER!</p>
+    <p>ናብቲ መውዓሊ በዓል ብቃልል ኣይትግብሩን!</p>
+  </div>
+  <div class="cryptic-ad">
+    <p>NO ONE ESCAPES THE DEBT!</p>
+    <p>ኣይንቐምጥን ካብዚ ጎዲማ!</p>
+  </div>
+</div>
 
   <!-- Jumpscare Buttons -->
   <button class="jumpscare-button" onclick="jumpscare()">DO NOT CLICK</button>
