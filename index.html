@@ -1,190 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sloppy Sullivan's - NO REFUNDS, NO QUESTIONS</title>
-    <style>
-        @keyframes flash {
-            0% { color: #ff0000; }
-            50% { color: #ffff00; }
-            100% { color: #ff0000; }
-        }
-        @keyframes shake {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(3deg); }
-            50% { transform: rotate(-3deg); }
-            75% { transform: rotate(3deg); }
-            100% { transform: rotate(0deg); }
-        }
-        @keyframes rotate {
-            0% { transform: rotate(0deg); opacity: 0.2; }
-            100% { transform: rotate(360deg); opacity: 0.2; }
-        }
-        body {
-            background-color: #111;
-            color: #8a2be2;
-            font-family: 'Papyrus', 'Courier New', 'Comic Sans MS', sans-serif;
-            text-align: center;
-            position: relative;
-        }
-        .header {
-            background-color: #9D00FF;
-            padding: 20px;
-            font-size: 70px;
-            border-bottom: 10px dashed yellow;
-            position: relative;
-        }
-        .header img {
-            width: 700px;
-            height: auto;
-        }
-        .flashing-banner {
-            font-size: 60px;
-            font-weight: bold;
-            animation: flash 0.8s infinite alternate;
-        }
-        .rotating-gif {
-            width: 500px;
-            height: 500px;
-            animation: rotate 20s linear infinite;
-            position: fixed;
-            bottom: -100px;
-            right: -100px;
-            opacity: 0.1;
-            z-index: -1;
-        }
-        .menu, .reviews, .location, .story, .ads {
-            padding: 20px;
-            border: 5px dotted #8a2be2;
-            margin: 20px auto;
-            width: 90%;
-            background: rgba(255, 0, 255, 0.2);
-            position: relative;
-        }
-        .menu img, .reviews img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border: 5px double #8a2be2;
-        }
-        .review {
-            font-size: 20px;
-            padding: 15px;
-            background: #222;
-            border-radius: 20px;
-            margin: 15px;
-            font-family: 'Impact', 'Comic Sans MS', sans-serif;
-        }
-        .location iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-        }
-        .ads div {
-            font-size: 18px;
-            background: yellow;
-            padding: 10px;
-            border: 3px solid red;
-            margin: 10px;
-            font-weight: bold;
-            animation: flash 1s infinite alternate;
-        }
-        .jumpscare-button {
-            background-color: red;
-            color: white;
-            font-size: 20px;
-            padding: 10px;
-            border: 3px solid yellow;
-            cursor: pointer;
-            margin: 10px;
-            display: inline-block;
-        }
-    </style>
-    <script>
-        function jumpscare() {
-            let img = document.createElement("img");
-            img.src = "https://i.imgur.com/HbCgd5U.jpg";
-            img.style.position = "fixed";
-            img.style.width = "100vw";
-            img.style.height = "100vh";
-            img.style.top = "0";
-            img.style.left = "0";
-            img.style.zIndex = "1000";
-            document.body.appendChild(img);
-            let audio = new Audio("https://voca.ro/1jRKXjoY90m4");
-            audio.play();
-            setTimeout(() => { img.remove(); }, 1000);
-        }
+  <meta charset="UTF-8">
+  <title>Sloppy Sullivan's - NO REFUNDS, NO QUESTIONS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        document.addEventListener("click", function() {
-            let audio = document.getElementById("background-audio");
-            if (audio.paused) {
-                audio.play();
-            }
-        });
-    </script>
-</head>
-<body>
-    <audio id="background-audio" autoplay loop>
-    <source src="audio/back.mp3" type="audio/mpeg">
-</audio>
-    <div class="header">
-        <h1 class="flashing-banner">WELCOME TO SLOPPY SULLIVAN'S</h1>
-        <p>"66% Chance of Malaria, 100% Chance of Regret."</p>
-        <img src="https://i.imgur.com/9ZjS2HI.jpg" alt="Sloppy Sullivan's Logo">
-    </div>
-
-    <div class="story">
-        <h2 class="flashing-banner">THE LEGEND OF SULLIVAN</h2>
-        <p>Man born in dust. He come to town, open burger. No man know where he from, no man know where he go. They say he never blink. The meat? Yes, we have. The sauce? You take it, it take you. He cook with no shirt, no fear. Enter only if you brave. Burger quality supreme leader, enjoy and eatings. Great man of Eritrea, make the fuckings with pig and woman, real man.</p>
-        <img src="https://i.imgur.com/rv9lTPA.jpg" alt="The last known image of Sullivan">
-    </div>
-
-<script>
-    function jumpscare() {
-        let img = document.createElement("img");
-        img.src = "https://i.imgur.com/HbCgd5U.jpg";
-        img.style.position = "fixed";
-        img.style.width = "100vw";
-        img.style.height = "100vh";
-        img.style.top = "0";
-        img.style.left = "0";
-        img.style.zIndex = "1000";
-        document.body.appendChild(img);
-
-        let audio = new Audio("audio/cougar.mp3"); // Jumpscare sound
-        audio.play();
-
-        setTimeout(() => { img.remove(); }, 1000);
+  <style>
+    /* Keyframes for flashing text */
+    @keyframes flash {
+      0%   { color: #ff0000; }
+      50%  { color: #ffff00; }
+      100% { color: #ff0000; }
     }
-</script>
 
-    <div class="menu">
-        <h2 class="flashing-banner">OUR QUESTIONABLE MENU</h2>
-        <img src="https://i.imgur.com/7L8xyd7.jpg" alt="Nasty Burger Surprise">
-        <p>The Nasty Burger Surprise – Meat. Fish? Maybe. Just eat.</p>
-        <img src="https://i.imgur.com/3C5Ba5N.jpg" alt="Sickening Shit">
-        <p>Sullivan's Sickening Shit – A mysterious pile of... something. No refunds.</p>
-        <img src="https://i.imgur.com/ZpxS5Ng.jpg" alt="Sullivan's Spit">
-        <p>Sullivan's Spit – Pocari Sweat served in a cracked cup.</p>
-    </div>
+    /* Basic page styling */
+    body {
+      background-color: #111;
+      color: #8a2be2;
+      font-family: 'Papyrus', 'Courier New', 'Comic Sans MS', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-    <div class="reviews">
-        <h2 class="flashing-banner">CUSTOMER TRAUMA</h2>
-        <p>"I blacked out for three hours after eating. Woke up in a different city." - ⭐⭐</p>
-        <p>"They asked for a tip, but the waiter just pocketed it and whispered 'For Sullivan’s bail fund.'" - ⭐⭐⭐</p>
-        <p>"There was a WHOLE shrimp in my milkshake. I didn’t order a milkshake." - ⭐</p>
-        <p>"The menu said ‘No refunds, no apologies.’ They meant it." - ⭐⭐⭐⭐</p>
-    </div>
-<div class="location">
+    /* Header */
+    .header {
+      background-color: #9D00FF;
+      padding: 20px;
+      font-size: 70px;
+      border-bottom: 10px dashed yellow;
+    }
+    .header img {
+      width: 700px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Flashing text banner */
+    .flashing-banner {
+      font-size: 60px;
+      font-weight: bold;
+      animation: flash 0.8s infinite alternate;
+    }
+
+    /* Section containers */
+    .story, .menu, .reviews, .location {
+      padding: 20px;
+      border: 5px dotted #8a2be2;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1200px;
+      background: rgba(255, 0, 255, 0.2);
+      position: relative;
+    }
+
+    /* Menu images */
+    .menu img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border: 5px double #8a2be2;
+      margin: 10px;
+    }
+
+    /* Reviews styling */
+    .reviews p {
+      background: #222;
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin: 10px;
+      font-family: 'Impact', 'Comic Sans MS', sans-serif;
+    }
+
+    /* Location map */
+    .location iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    /* Jumpscare buttons */
+    .jumpscare-button {
+      background-color: red;
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+      border: 3px solid yellow;
+      cursor: pointer;
+      margin: 10px;
+      display: inline-block;
+    }
+  </style>
+
+  <script>
+    // Function to play background audio on user interaction if blocked
+    document.addEventListener("click", function() {
+      let audio = document.getElementById("background-audio");
+      if (audio.paused) {
+        audio.play();
+      }
+    });
+
+    // Jumpscare function
+    function jumpscare() {
+      // Show scary image
+      let img = document.createElement("img");
+      img.src = "https://i.imgur.com/HbCgd5U.jpg";
+      img.style.position = "fixed";
+      img.style.top = "0";
+      img.style.left = "0";
+      img.style.width = "100vw";
+      img.style.height = "100vh";
+      img.style.zIndex = "99999";
+      document.body.appendChild(img);
+
+      // Play cougar sound
+      let audio = new Audio("audio/cougar.mp3");
+      audio.play();
+
+      // Remove image after 1 second
+      setTimeout(() => {
+        img.remove();
+      }, 1000);
+    }
+
+    // Play scream on hover over Sullivan’s photo
+    function playScream() {
+      let scream = new Audio("audio/scream.mp3");
+      scream.play();
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Background audio -->
+  <audio id="background-audio" autoplay loop>
+    <source src="audio/back.mp3" type="audio/mpeg">
+    <!-- Fallback if user’s browser doesn’t support HTML5 audio -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Header / Title -->
+  <div class="header">
+    <h1 class="flashing-banner">WELCOME TO SLOPPY SULLIVAN'S</h1>
+    <p>"66% Chance of Malaria, 100% Chance of Regret."</p>
+    <img src="https://i.imgur.com/9ZjS2HI.jpg" alt="Sloppy Sullivan's Logo">
+  </div>
+
+  <!-- The Legend of Sullivan (No PG-13 limitation) -->
+  <div class="story">
+    <h2 class="flashing-banner">THE LEGEND OF SULLIVAN</h2>
+    <p>
+      Man born in dust. He strolled into town, dragging a filthy cooler behind him, 
+      shirtless as hell, mumbling curses that nobody could understand. No one knew 
+      where he came from, no one knew where the bastard would go next. They say 
+      he never blinks unless he's brawling with the local livestock. Rumor has it, 
+      he once slapped a goat clean across the face because it “stole his sauce.” 
+      <br><br>
+      The meat? Oh, we’ve got it, all right. You might not want to ask too many questions 
+      about its origin, though. The sauce? If you dare to try it, it just might crawl 
+      inside your goddamn soul. He cooks without pants half the time, free-balling it 
+      over an open grill because he likes the ‘dangerous breeze.’ This place ain’t for 
+      the faint of heart. If you can’t handle the heat, or the stench, you’d best get the 
+      hell out while you still can. 
+      <br><br>
+      Legend says the first time Sullivan lit his grill, entire swarms of insects dropped 
+      from the sky—poisoned by the fumes of charred, unidentifiable meats. Folks talk 
+      of horrifying late-night deliveries: chunk-filled sacks arriving at his back door, 
+      dribbling something that glowed under moonlight. Nobody’s sure if it’s pig, cow, 
+      or some other creature that only Sullivan’s twisted mind could conjure up. 
+      <br><br>
+      Word spread across every broken-down highway diner about this half-naked, 
+      unholy chef. Daredevils, thrill-seekers, and sick freaks who crave bizarre cuisine 
+      have come from all corners of the earth just to watch him slap a slab of 
+      ‘mystery flesh’ onto a grill. Some swear the meat moans before it hits the fire. 
+      Others say the sauce can bring your worst nightmares to life—and you’ll still 
+      lick the plate clean like a crazed animal. 
+      <br><br>
+      Don’t even get me started on the fights. Oh yeah, there are fights. When the 
+      hunger takes over, and that rancid, spiced aroma floods your nostrils, people 
+      lose their goddamn minds. Tables get flipped, chairs get broken, and someone 
+      always ends up puking out back in the alley. Sullivan just stands there, half-grinning, 
+      scratching his chest hair, flipping patties like it’s the most natural thing in the world. 
+      <br><br>
+      So, wander in if you’re brave—or stupid. Order the special if you have a death wish. 
+      And if you see him eyeballing you from across the room, staring at you with those 
+      unblinking eyes, maybe it’s time to back off. Because if Sullivan decides you’re on 
+      the menu, well, let’s just say you’ll leave this place as more than just a paying customer.
+    </p>
+    <img src="https://i.imgur.com/rv9lTPA.jpg" 
+         alt="The last known image of Sullivan" 
+         onmouseenter="playScream()"
+         style="width: 600px; max-width: 100%; border: 5px double #8a2be2;">
+  </div>
+
+  <!-- Jumpscare Buttons -->
+  <button class="jumpscare-button" onclick="jumpscare()">DO NOT CLICK</button>
+  <button class="jumpscare-button" onclick="jumpscare()">MYSTERY MEAT?</button>
+  <button class="jumpscare-button" onclick="jumpscare()">SECRET SAUCE</button>
+  <button class="jumpscare-button" onclick="jumpscare()">SULLIVAN SPECIAL</button>
+  <button class="jumpscare-button" onclick="jumpscare()">CLICK TO WIN*</button>
+
+  <!-- Menu Section -->
+  <div class="menu">
+    <h2 class="flashing-banner">OUR QUESTIONABLE MENU</h2>
+    <img src="https://i.imgur.com/7L8xyd7.jpg" alt="Nasty Burger Surprise">
+    <p>The Nasty Burger Surprise – Meat. Fish? Maybe. Just eat. Ask no questions.</p>
+
+    <img src="https://i.imgur.com/3C5Ba5N.jpg" alt="Sickening Shit">
+    <p>Sullivan's Sickening Shit – A mysterious pile of... something. Actually smells kind of good. No refunds.</p>
+
+    <img src="https://i.imgur.com/ZpxS5Ng.jpg" alt="Sullivan's Spit">
+    <p>Sullivan's Spit – Pocari Sweat served in a cracked cup. Just be glad we’re giving you a cup at all.</p>
+  </div>
+
+  <!-- Reviews Section -->
+  <div class="reviews">
+    <h2 class="flashing-banner">CUSTOMER TRAUMA</h2>
+    <p>"I blacked out for three hours after eating. Woke up in a different city. My wallet was gone, 2/5 stars." - ⭐⭐</p>
+    <p>"They asked for a tip, but the waiter just pocketed it and whispered 'For Sullivan’s bail fund.' 3/5 stars." - ⭐⭐⭐</p>
+    <p>"There was a WHOLE shrimp in my milkshake. I didn’t order a milkshake, what the hell? 1/5 stars." - ⭐</p>
+    <p>"The menu said ‘No refunds, no apologies.’ They sure as shit meant it. 4/5 stars." - ⭐⭐⭐⭐</p>
+  </div>
+
+  <!-- Location Section -->
+  <div class="location">
     <h2 class="flashing-banner">WHERE WE ARE (MAYBE)</h2>
     <p>Somewhere in an alley. You’ll know it when you see it.</p>
-    <iframe src="https://www.google.com/maps/embed/v1/place?q=Doha+Qatar&key=YOUR_GOOGLE_MAPS_API_KEY"></iframe>
-</div>
-
+    <iframe 
+      src="https://www.google.com/maps/embed/v1/place?q=Doha+Qatar&key=YOUR_GOOGLE_MAPS_API_KEY">
+    </iframe>
+  </div>
 </body>
 </html>
+
 
 
 
