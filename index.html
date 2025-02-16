@@ -134,42 +134,13 @@
         <p>"66% Chance of Malaria, 100% Chance of Regret."</p>
         <img src="https://i.imgur.com/9ZjS2HI.jpg" alt="Sloppy Sullivan's Logo">
     </div>
-<button class="jumpscare-button" onclick="playCougarSound()">DO NOT CLICK</button>
-<button class="jumpscare-button" onclick="playCougarSound()">MYSTERY MEAT?</button>
-<button class="jumpscare-button" onclick="playCougarSound()">SECRET SAUCE</button>
-<button class="jumpscare-button" onclick="playCougarSound()">SULLIVAN SPECIAL</button>
-<button class="jumpscare-button" onclick="playCougarSound()">CLICK TO WIN*</button>
 
-<script>
-    function playCougarSound() {
-        let audio = new Audio("audio/cougar.mp3"); // Make sure the file is in the 'audio/' folder
-        audio.play();
-    }
 </script>
     <div class="story">
         <h2 class="flashing-banner">THE LEGEND OF SULLIVAN</h2>
         <p>Man born in dust. He come to town, open burger. No man know where he from, no man know where he go. They say he never blink. The meat? Yes, we have. The sauce? You take it, it take you. He cook with no shirt, no fear. Enter only if you brave. Burger quality supreme leader, enjoy and eatings. Great man of Eritrea, make the fuckings with pig and woman, real man.</p>
         <img src="https://i.imgur.com/rv9lTPA.jpg" alt="The last known image of Sullivan">
     </div>
-
-<script>
-    function jumpscare() {
-        let img = document.createElement("img");
-        img.src = "https://i.imgur.com/HbCgd5U.jpg";
-        img.style.position = "fixed";
-        img.style.width = "100vw";
-        img.style.height = "100vh";
-        img.style.top = "0";
-        img.style.left = "0";
-        img.style.zIndex = "1000";
-        document.body.appendChild(img);
-
-        let audio = new Audio("audio/cougar.mp3"); // Jumpscare sound
-        audio.play();
-
-        setTimeout(() => { img.remove(); }, 1000);
-    }
-</script>
 
     <div class="menu">
         <h2 class="flashing-banner">OUR QUESTIONABLE MENU</h2>
@@ -181,6 +152,18 @@
         <p>Sullivan's Spit – Pocari Sweat served in a cracked cup.</p>
     </div>
 
+<button class="jumpscare-button" onclick="playCougarSound()">DO NOT CLICK</button>
+<button class="jumpscare-button" onclick="playCougarSound()">MYSTERY MEAT?</button>
+<button class="jumpscare-button" onclick="playCougarSound()">SECRET SAUCE</button>
+<button class="jumpscare-button" onclick="playCougarSound()">SULLIVAN SPECIAL</button>
+<button class="jumpscare-button" onclick="playCougarSound()">CLICK TO WIN*</button>
+
+<script>
+    function playCougarSound() {
+        let audio = new Audio("audio/cougar.mp3"); 
+        audio.play();
+    }
+    
     <div class="reviews">
         <h2 class="flashing-banner">CUSTOMER TRAUMA</h2>
         <p>"I blacked out for three hours after eating. Woke up in a different city." - ⭐⭐</p>
