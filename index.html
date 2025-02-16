@@ -126,9 +126,9 @@
     </script>
 </head>
 <body>
-    <audio id="background-audio" autoplay loop controls>
-        <source src="https://voca.ro/13I79BdiR9VU" type="audio/mpeg">
-    </audio>
+    <audio id="background-audio" autoplay loop>
+    <source src="audio/back.mp3" type="audio/mpeg">
+</audio>
 </body>
 </html>
 
@@ -149,12 +149,24 @@
         <img src="https://i.imgur.com/rv9lTPA.jpg" alt="The last known image of Sullivan">
     </div>
 
-    <button class="jumpscare-button" onclick="jumpscare()">DO NOT CLICK</button>
-<button class="jumpscare-button" onclick="jumpscare()">MYSTERY MEAT?</button>
-<button class="jumpscare-button" onclick="jumpscare()">SECRET SAUCE</button>
-<button class="jumpscare-button" onclick="jumpscare()">SULLIVAN SPECIAL</button>
-<button class="jumpscare-button" onclick="jumpscare()">CLICK TO WIN*</button>
+<script>
+    function jumpscare() {
+        let img = document.createElement("img");
+        img.src = "https://i.imgur.com/HbCgd5U.jpg";
+        img.style.position = "fixed";
+        img.style.width = "100vw";
+        img.style.height = "100vh";
+        img.style.top = "0";
+        img.style.left = "0";
+        img.style.zIndex = "1000";
+        document.body.appendChild(img);
 
+        let audio = new Audio("audio/cougar.mp3"); // Jumpscare sound
+        audio.play();
+
+        setTimeout(() => { img.remove(); }, 1000);
+    }
+</script>
 
     <div class="menu">
         <h2 class="flashing-banner">OUR QUESTIONABLE MENU</h2>
@@ -180,9 +192,7 @@
     <p>Somewhere in an alley. You’ll know it when you see it.</p>
     <iframe src="https://www.google.com/maps/embed/v1/place?q=Doha+Qatar&key=YOUR_GOOGLE_MAPS_API_KEY"></iframe>
 </div>
-<audio id="background-audio" autoplay loop>
-    <source src="https://docs.google.com/uc?export=download&id=1jMdDZt2TaA_AbmMU21Cn0_dFJcL_jDpZ" type="audio/mpeg">
-</audio>
+
 </body>
 </html>
 
