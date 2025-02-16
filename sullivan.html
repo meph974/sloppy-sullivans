@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloppy Sullivan's - NO REFUNDS, NO QUESTIONS</title>
+    <style>
+        @keyframes flash {
+            0% { color: #ff0000; }
+            50% { color: #ffff00; }
+            100% { color: #ff0000; }
+        }
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            50% { transform: rotate(-3deg); }
+            75% { transform: rotate(3deg); }
+            100% { transform: rotate(0deg); }
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); opacity: 0.2; }
+            100% { transform: rotate(360deg); opacity: 0.2; }
+        }
+        body {
+            background-color: #111;
+            color: #8a2be2;
+            font-family: 'Papyrus', 'Courier New', 'Comic Sans MS', sans-serif;
+            text-align: center;
+            position: relative;
+        }
+        .header {
+            background-color: #8a2be2;
+            padding: 20px;
+            font-size: 70px;
+            border-bottom: 10px dashed yellow;
+            position: relative;
+        }
+        .header img {
+            width: 700px;
+            height: auto;
+        }
+        .flashing-banner {
+            font-size: 60px;
+            font-weight: bold;
+            animation: flash 0.8s infinite alternate;
+        }
+        .rotating-gif {
+            width: 500px;
+            height: 500px;
+            animation: rotate 20s linear infinite;
+            position: fixed;
+            bottom: -100px;
+            right: -100px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        .menu, .reviews, .location, .story, .ads {
+            padding: 20px;
+            border: 5px dotted #8a2be2;
+            margin: 20px auto;
+            width: 90%;
+            background: rgba(255, 0, 255, 0.2);
+            position: relative;
+        }
+        .menu img, .reviews img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 5px double #8a2be2;
+        }
+        .review {
+            font-size: 20px;
+            padding: 15px;
+            background: #222;
+            border-radius: 20px;
+            margin: 15px;
+            font-family: 'Impact', 'Comic Sans MS', sans-serif;
+        }
+        .location iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .ads div {
+            font-size: 18px;
+            background: yellow;
+            padding: 10px;
+            border: 3px solid red;
+            margin: 10px;
+            font-weight: bold;
+            animation: flash 1s infinite alternate;
+        }
+        .jumpscare-button {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border: 3px solid yellow;
+            cursor: pointer;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function jumpscare() {
+            let img = document.createElement("img");
+            img.src = "https://i.imgur.com/HbCgd5U.jpg";
+            img.style.position = "fixed";
+            img.style.width = "100vw";
+            img.style.height = "100vh";
+            img.style.top = "0";
+            img.style.left = "0";
+            img.style.zIndex = "1000";
+            document.body.appendChild(img);
+            let audio = new Audio("https://voca.ro/1jRKXjoY90m4");
+            audio.play();
+            setTimeout(() => { img.remove(); }, 1000);
+        }
+
+        document.addEventListener("click", function() {
+            let audio = document.getElementById("background-audio");
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    </script>
+</head>
+<body>
+    <audio id="background-audio" autoplay loop controls>
+        <source src="https://voca.ro/13I79BdiR9VU" type="audio/mpeg">
+    </audio>
+</body>
+</html>
+
+
+
+
+
+<body>
+    <div class="header">
+        <h1 class="flashing-banner">WELCOME TO SLOPPY SULLIVAN'S</h1>
+        <p>"66% Chance of Malaria, 100% Chance of Regret."</p>
+        <img src="https://i.imgur.com/9ZjS2HI.jpg" alt="Sloppy Sullivan's Logo">
+    </div>
+
+    <div class="story">
+        <h2 class="flashing-banner">THE LEGEND OF SULLIVAN</h2>
+        <p>Man born in dust. He come to town, open burger. No man know where he from, no man know where he go. They say he never blink. The meat? Yes, we have. The sauce? You take it, it take you. He cook with no shirt, no fear. Enter only if you brave. Burger quality supreme leader, enjoy and eatings. Great man of Eritrea, make the fuckings with pig and woman, real man.</p>
+        <img src="https://i.imgur.com/rv9lTPA.jpg" alt="The last known image of Sullivan">
+    </div>
+
+    <button class="jumpscare-button" onclick="jumpscare()">DO NOT CLICK</button>
+<button class="jumpscare-button" onclick="jumpscare()">MYSTERY MEAT?</button>
+<button class="jumpscare-button" onclick="jumpscare()">SECRET SAUCE</button>
+<button class="jumpscare-button" onclick="jumpscare()">SULLIVAN SPECIAL</button>
+<button class="jumpscare-button" onclick="jumpscare()">CLICK TO WIN*</button>
+
+
+    <div class="menu">
+        <h2 class="flashing-banner">OUR QUESTIONABLE MENU</h2>
+        <img src="https://i.imgur.com/7L8xyd7.jpg" alt="Nasty Burger Surprise">
+        <p>The Nasty Burger Surprise – Meat. Fish? Maybe. Just eat.</p>
+        <img src="https://i.imgur.com/3C5Ba5N.jpg" alt="Sickening Shit">
+        <p>Sullivan's Sickening Shit – A mysterious pile of... something. No refunds.</p>
+        <img src="https://i.imgur.com/ZpxS5Ng.jpg" alt="Sullivan's Spit">
+        <p>Sullivan's Spit – Pocari Sweat served in a cracked cup.</p>
+    </div>
+
+    <div class="reviews">
+        <h2 class="flashing-banner">CUSTOMER TRAUMA</h2>
+        <p>"I blacked out for three hours after eating. Woke up in a different city." - ⭐⭐</p>
+        <p>"They asked for a tip, but the waiter just pocketed it and whispered 'For Sullivan’s bail fund.'" - ⭐⭐⭐</p>
+        <p>"There was a WHOLE shrimp in my milkshake. I didn’t order a milkshake." - ⭐</p>
+        <p>"The menu said ‘No refunds, no apologies.’ They meant it." - ⭐⭐⭐⭐</p>
+    </div>
+</body>
+<body>
+<div class="location">
+    <h2 class="flashing-banner">WHERE WE ARE (MAYBE)</h2>
+    <p>Somewhere in an alley. You’ll know it when you see it.</p>
+    <iframe src="https://www.google.com/maps/embed/v1/place?q=Doha+Qatar&key=YOUR_GOOGLE_MAPS_API_KEY"></iframe>
+</div>
+<audio id="background-audio" autoplay loop>
+    <source src="https://docs.google.com/uc?export=download&id=1jMdDZt2TaA_AbmMU21Cn0_dFJcL_jDpZ" type="audio/mpeg">
+</audio>
+</body>
+</html>
+
+
