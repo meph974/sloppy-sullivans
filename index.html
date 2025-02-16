@@ -102,25 +102,26 @@
         }
     </style>
     <script>
-       function jumpscare() {
-    let img = document.createElement("img");
-    img.src = "https://i.imgur.com/HbCgd5U.jpg";  // Corrected image link
-    img.style.position = "fixed";  // Fixes the image position
-    img.style.width = "100vw";  // Full-screen width
-    img.style.height = "100vh";  // Full-screen height
-    img.style.top = "0";  // Make sure it's at the top
-    img.style.left = "0";  // Make sure it's at the left
-    img.style.zIndex = "1000";  // Ensures the image is on top
-    document.body.appendChild(img);  // Adds image to the body
+        function jumpscare() {
+            let img = document.createElement("img");
+            img.src = "https://i.imgur.com/HbCgd5U.jpg";
+            img.style.position = "fixed";
+            img.style.width = "100vw";
+            img.style.height = "100vh";
+            img.style.top = "0";
+            img.style.left = "0";
+            img.style.zIndex = "1000";
+            document.body.appendChild(img);
+            let audio = new Audio("https://voca.ro/1jRKXjoY90m4");
+            audio.play();
+            setTimeout(() => { img.remove(); }, 1000);
+        }
 
-    let audio = new Audio("https://voca.ro/1jRKXjoY90m4");  
-    audio.play();
-
- 
-    setTimeout(() => {
-        img.remove();
-    }, 1000);
-}
+        document.addEventListener("click", function() {
+            let audio = document.getElementById("background-audio");
+            if (audio.paused) {
+                audio.play();
+            }
         });
     </script>
 </head>
@@ -134,12 +135,30 @@
         <img src="https://i.imgur.com/9ZjS2HI.jpg" alt="Sloppy Sullivan's Logo">
     </div>
 
-</script>
     <div class="story">
         <h2 class="flashing-banner">THE LEGEND OF SULLIVAN</h2>
         <p>Man born in dust. He come to town, open burger. No man know where he from, no man know where he go. They say he never blink. The meat? Yes, we have. The sauce? You take it, it take you. He cook with no shirt, no fear. Enter only if you brave. Burger quality supreme leader, enjoy and eatings. Great man of Eritrea, make the fuckings with pig and woman, real man.</p>
         <img src="https://i.imgur.com/rv9lTPA.jpg" alt="The last known image of Sullivan">
     </div>
+
+<script>
+    function jumpscare() {
+        let img = document.createElement("img");
+        img.src = "https://i.imgur.com/HbCgd5U.jpg";
+        img.style.position = "fixed";
+        img.style.width = "100vw";
+        img.style.height = "100vh";
+        img.style.top = "0";
+        img.style.left = "0";
+        img.style.zIndex = "1000";
+        document.body.appendChild(img);
+
+        let audio = new Audio("audio/cougar.mp3"); // Jumpscare sound
+        audio.play();
+
+        setTimeout(() => { img.remove(); }, 1000);
+    }
+</script>
 
     <div class="menu">
         <h2 class="flashing-banner">OUR QUESTIONABLE MENU</h2>
@@ -151,36 +170,6 @@
         <p>Sullivan's Spit – Pocari Sweat served in a cracked cup.</p>
     </div>
 
-<button class="jumpscare-button" onclick="jumpscare()">DO NOT CLICK</button>
-<button class="jumpscare-button" onclick="jumpscare()">MYSTERY MEAT?</button>
-<button class="jumpscare-button" onclick="jumpscare()">SECRET SAUCE</button>
-<button class="jumpscare-button" onclick="jumpscare()">SULLIVAN SPECIAL</button>
-<button class="jumpscare-button" onclick="jumpscare()">CLICK TO WIN*</button>
-
-<style>
-    
-    .jumpscare-button {
-        background-color: red;
-        color: white;
-        font-size: 20px;
-        padding: 10px;
-        border: 3px solid yellow;
-        cursor: pointer;
-        margin: 10px;
-        display: inline-block;
-        position: relative;  /* Ensure they are positioned correctly */
-        z-index: 10; 
-    }
-
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh;
-    }
-</style>
-    
     <div class="reviews">
         <h2 class="flashing-banner">CUSTOMER TRAUMA</h2>
         <p>"I blacked out for three hours after eating. Woke up in a different city." - ⭐⭐</p>
@@ -196,5 +185,7 @@
 
 </body>
 </html>
+
+
 
 
